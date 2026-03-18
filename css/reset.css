@@ -51,3 +51,37 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* CSS Variables for Light Mode */
+:root {
+  --nav-bg-color: #fff;
+  --hero-bg-color: #f8f9fa;
+  --card-bg-color: #fff;
+  --divider-color: #e0e0e0;
+  --primary-color: #007bff;
+  --font-default-color: #333;
+  --body-bg-color: #fff;
+  --input-bg-color: #fff;
+  --input-text-color: #333;
+  --label-color: #555;
+  --secondary-text-color: #666;
+  --table-header-color: #555;
+  --table-cell-color: #333;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+  --nav-bg-color: #333;
+  --hero-bg-color: #222;
+  --card-bg-color: #444;
+  --divider-color: #555;
+  --primary-color: #4dabf7;
+  --font-default-color: #ddd;
+  --body-bg-color: #121212;
+  --input-bg-color: #555;
+  --input-text-color: #ddd;
+  --label-color: #ccc;
+  --secondary-text-color: #bbb;
+  --table-header-color: #ccc;
+  --table-cell-color: #ddd;
+}

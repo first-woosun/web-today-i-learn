@@ -4,37 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <!-- TODO: Open Graph 메타 태그를 설정하세요 -->
-    <!-- <meta property="og:title" content="페이지 제목" /> -->
-    <!-- <meta property="og:description" content="페이지 설명" /> -->
-    <!-- <meta property="og:image" content="./images/thumbnail.jpg" /> -->
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="about 투핸더" />
+    <meta property="og:description" content="저를 기록하는 사이트입니다." />
+    <meta property="og:image" content="./images/profile.jpg" />
 
-    <title>Today I Learn</title>
+    <title>about 투핸더</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/index.js" defer></script>
   </head>
   <body>
-    <!-- 상단 내비게이션 -->
-    <nav class="top-nav">
-      <span class="nav-logo">My Page</span>
-      <ul class="nav-links">
-        <li><a href="#about">자기소개</a></li>
-        <li><a href="#gallery">갤러리</a></li>
-        <li><a href="#works">인생 작품</a></li>
-        <li><a href="#til">TIL</a></li>
-      </ul>
-    </nav>
+    <!-- 상단 헤더 -->
+    <header>
+      <!-- 상단 내비게이션 -->
+      <nav class="top-nav">
+        <span class="nav-logo">My Page</span>
+        <ul class="nav-links">
+          <li><a href="#about">자기소개</a></li>
+          <li><a href="#gallery">갤러리</a></li>
+          <li><a href="#works">인생 작품</a></li>
+          <li><a href="#til">TIL</a></li>
+        </ul>
+        <button id="dark-mode-toggle" class="dark-mode-btn">🌙</button>
+      </nav>
+    </header>
 
     <!-- 프로필 히어로 -->
     <section class="hero" id="about">
       <div class="profile-card">
         <div class="profile-image">
           <!-- TODO: 프로필 이미지를 넣어주세요 -->
-          <!-- <img src="./images/profile.jpg" alt="프로필 사진" /> -->
+          <img src="./images/profile.jpg" alt="프로필 사진" />
         </div>
         <div class="profile-info">
-          <h1>닉네임</h1>
-          <p class="tagline">한 줄 소개를 작성해주세요.</p>
+          <h1>투핸더</h1>
+          <p class="tagline">테토남? 그게 뭐죠? 먹는건감 <br>(*^_^*)</p>
         </div>
       </div>
     </section>
@@ -43,8 +47,7 @@
       <!-- 자기소개 -->
       <section class="content-section">
         <h2>자기소개</h2>
-        <p>자기소개를 작성해주세요.</p>
-        <!-- TODO: 소개 글 안에 블로그, GitHub 등 관련 링크를 <a> 태그로 연결하세요 -->
+        <p>이렇다 할 뭔가는 없지만 앞으로 만들어 가겠습니다. 제 GitHub는 <a href="https://github.com/example" target="_blank">여기</a>에서 확인하실 수 있습니다.</p>
       </section>
 
       <!-- 기본 정보 -->
@@ -54,19 +57,19 @@
         <table class="info-table">
           <tr>
             <th>이름</th>
-            <td></td>
+            <td>유우선</td>
           </tr>
           <tr>
             <th>MBTI</th>
-            <td></td>
+            <td>ENFP</td>
           </tr>
           <tr>
             <th>취미</th>
-            <td></td>
+            <td>볼링, 게임, 노래 듣기, 산책, 노래 들으며 산책(?)</td>
           </tr>
           <tr>
             <th>좋아하는 음식</th>
-            <td></td>
+            <td>군것질 못 참는 포테토남</td>
           </tr>
         </table>
       </section>
@@ -74,33 +77,49 @@
       <!-- 나만의 갤러리 -->
       <section class="content-section" id="gallery">
         <h2>나만의 갤러리</h2>
-        <p class="section-desc">갤러리 부제를 작성해주세요. (예: 기억에 남는 여행지)</p>
-        <div class="gallery-grid">
-          <!-- TODO: 9장의 이미지를 배치하세요 -->
-          <!--
-          <img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" />
-          <img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" />
-          ...
-          -->
+        <p class="section-desc">기억에 남는 순간들</p>
+        <ul class="gallery-grid">
+          <li><img src="./images/gallery-1.jpg" alt="갤러리 이미지 1" /></li>
+          <li><img src="./images/gallery-2.jpg" alt="갤러리 이미지 2" /></li>
+          <li><img src="./images/gallery-3.jpg" alt="갤러리 이미지 3" /></li>
+          <li><img src="./images/gallery-4.jpg" alt="갤러리 이미지 4" /></li>
+          <li><img src="./images/gallery-5.jpg" alt="갤러리 이미지 5" /></li>
+          <li><img src="./images/gallery-6.jpg" alt="갤러리 이미지 6" /></li>
+          <li><img src="./images/gallery-7.jpg" alt="갤러리 이미지 7" /></li>
+          <li><img src="./images/gallery-8.jpg" alt="갤러리 이미지 8" /></li>
+          <li><img src="./images/gallery-9.jpg" alt="갤러리 이미지 9" /></li>
+        </ul>
+
+        <!-- 갤러리 모달 -->
+        <div id="gallery-modal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modal-image" />
         </div>
       </section>
 
-      <!-- 나를 울린 인생 작품 -->
+      <!-- 나를 울릴 뻔 한 작품 -->
       <section class="content-section" id="works">
-        <h2>나를 울린 인생 작품</h2>
-        <div class="works-list">
-          <!-- TODO: 최소 2가지 작품을 소개하세요 -->
-          <!-- TODO: 작품 중 하나는 <video> 또는 <iframe>으로 영상을 삽입하세요 -->
-          <article class="work-card">
+        <h2>나를 울릴 뻔 한 작품</h2>
+        <ul class="works-list">
+          <li class="work-card">
             <div class="work-thumbnail">
-              <!-- 작품 이미지 -->
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/9LzJJJvzZ1U" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="work-info">
-              <h3>작품 제목</h3>
-              <p>작품에 대한 설명을 작성해주세요.</p>
+              <h3>싸이 - 아버지</h3>
+              <p>중학생 때 이 노래 들으면서 집가다 아버지 생각에 훌쩍 거리면서 갔습니다.</p>
             </div>
-          </article>
-        </div>
+          </li>
+          <li class="work-card">
+            <div class="work-thumbnail">
+              <img src="./images/work-thumbnail-2.jpg" alt="작품 이미지 2">
+            </div>
+            <div class="work-info">
+              <h3>나의 히어로 아카데미아</h3>
+              <p>저 소년 만화 좋아합니다. 마지막에 등장인물들이 주인공에게 힘내라며 외치는 장면이 인상적이었습니다.</p>
+            </div>
+          </li>
+        </ul>
       </section>
 
       <!-- TIL (Today I Learned) -->

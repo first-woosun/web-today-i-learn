@@ -1,7 +1,12 @@
-/* 상단 내비게이션 */
-.top-nav {
+/* 상단 헤더 */
+header {
   position: sticky;
   top: 0;
+  z-index: 10;
+}
+
+/* 상단 내비게이션 */
+.top-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +14,6 @@
   height: 56px;
   background-color: var(--nav-bg-color);
   border-bottom: 1px solid var(--divider-color);
-  z-index: 10;
 }
 
 .nav-logo {
@@ -32,6 +36,19 @@
 }
 
 .nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--font-default-color);
+  transition: color 0.2s;
+}
+
+.dark-mode-btn:hover {
   color: var(--primary-color);
 }
 
@@ -80,6 +97,8 @@ main {
   max-width: 780px;
   margin: 0 auto;
   padding: 0 24px;
+  background-color: var(--body-bg-color);
+  transition: background-color 0.3s;
 }
 
 .content-section {
@@ -98,9 +117,10 @@ main {
 
 .content-section > p,
 .section-desc {
-  color: #666;
+  color: var(--secondary-text-color);
   line-height: 1.8;
   margin-bottom: 24px;
+  transition: color 0.3s;
 }
 
 /* 갤러리 그리드 */
@@ -108,6 +128,12 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.gallery-grid li {
+  width: 100%;
 }
 
 .gallery-grid img {
@@ -122,6 +148,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  list-style: none;
+  padding: 0;
 }
 
 .work-card {
@@ -153,8 +181,9 @@ main {
 }
 
 .work-info p {
-  color: #666;
+  color: var(--secondary-text-color);
   line-height: 1.6;
+  transition: color 0.3s;
 }
 
 /* TIL */
@@ -169,6 +198,7 @@ main {
   border-left: 3px solid var(--primary-color);
   background-color: var(--card-bg-color);
   border-radius: 0 8px 8px 0;
+  position: relative;
 }
 
 .til-item time {
@@ -184,6 +214,61 @@ main {
 .til-item p {
   color: #666;
   line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 4px 8px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+  background-color: #ff5252;
+}
+
+/* 갤러리 모달 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* 방명록 */
@@ -279,13 +364,15 @@ footer {
 
 .info-table th {
   width: 140px;
-  color: #555;
+  color: var(--table-header-color);
   font-weight: 700;
   background-color: var(--card-bg-color);
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .info-table td {
-  color: #333;
+  color: var(--table-cell-color);
+  transition: color 0.3s;
 }
 
 /* TIL 작성 폼 */
@@ -309,7 +396,8 @@ footer {
 .til-form label {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #555;
+  color: var(--label-color);
+  transition: color 0.3s;
 }
 
 .til-form input,
@@ -319,6 +407,9 @@ footer {
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.95rem;
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .til-form textarea {
